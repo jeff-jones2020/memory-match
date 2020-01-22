@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const gameCardsEl = document.getElementById("game-cards");
 gameCardsEl.addEventListener("click", handleClick);
 let firstCardClicked;
@@ -29,3 +30,6 @@ function handleClick(event) {
   }
 
 }
+=======
+
+>>>>>>> parent of 2d650f7... Completed Memory Match Flip One Card Feature
