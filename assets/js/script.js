@@ -28,8 +28,6 @@ function handleClick(event) {
                   secondCardClicked.classList.remove("hidden");
                   resetCards();
                   gameCardsEl.addEventListener("click", handleClick);} ,2000);
-
-
     }
   }
 }
