@@ -38,10 +38,13 @@ body {
   justify-items: center;
   vertical-align: middle;
 }
-
 #aside > * > p {
   margin: 0;
   padding: 12px 0;
+}
+#aside > *:first-child > p {
+  font-weight: bold;
+  font-size: 18px;
 }
 
 #game-cards {
@@ -79,9 +82,13 @@ body {
   top: 27%;
   left: 40%;
   background: deepskyblue;
+  text-align: center;
 }
 #win-modal > h1{
-  padding: 30px 50px 30px 50px;
+  padding: 30px 50px 10px 50px;
+}
+#reset-game-btn {
+  margin-bottom: 10px;
 }
 
 .hidden {
