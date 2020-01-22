@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const gameCardsEl = document.getElementById("game-cards");
 gameCardsEl.addEventListener("click", handleClick);
 let firstCardClicked;
@@ -7,7 +6,6 @@ let firstCardClasses;
 let secondCardClasses;
 
 function handleClick(event) {
-  console.log(event);
   if (event.target.className.indexOf("card-back") === -1) {
     return;
   }
@@ -17,19 +15,26 @@ function handleClick(event) {
     firstCardClasses = firstCardClicked.previousElementSibling.className;
   }else {
     secondCardClicked = event.target;
+    gameCardsEl.removeEventListener("click", handleClick);
     secondCardClicked.classList.add("hidden");
     secondCardClasses = secondCardClicked.previousElementSibling.className;
     if(firstCardClasses === secondCardClasses) {
       console.log("The images match");
+      resetCards();
+      gameCardsEl.addEventListener("click", handleClick);
     }else {
       setTimeout(function () {
                   firstCardClicked.classList.remove("hidden");
-                  secondCardClicked.classList.remove("hidden");} ,2000);
+                  secondCardClicked.classList.remove("hidden");
+                  resetCards();
+                  gameCardsEl.addEventListener("click", handleClick);} ,2000);
+
 
     }
   }
-
 }
-=======
 
->>>>>>> parent of 2d650f7... Completed Memory Match Flip One Card Feature
+function resetCards() {
+  firstCardClicked = null;
+  secondCardClicked = null;
+}
