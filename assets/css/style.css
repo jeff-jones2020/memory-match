@@ -44,7 +44,7 @@ body {
   padding: 12px 0;
 }
 
-#main {
+#game-cards {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -53,11 +53,27 @@ body {
   margin-left: 20px;
 }
 
-#main > * {
+.card-sleeve {
+  position: relative;
   height: 24%;
-  /* width: 100px; */
-  background-image: url('../images/lfz-card.jpg');
-  background-size: contain;
+}
+
+.card-back, .card-front {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.card-back {
+  background-image: url('../images/lfz-card.jpg');
+  position: absolute;
+}
+.card-front {
+  position: absolute;
+}
+
+.hidden {
+  display: none;
 }
