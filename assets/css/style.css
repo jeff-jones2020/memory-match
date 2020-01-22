@@ -74,6 +74,16 @@ body {
   position: absolute;
 }
 
+#win-modal {
+  position: fixed;
+  top: 27%;
+  left: 40%;
+  background: deepskyblue;
+}
+#win-modal > h1{
+  padding: 30px 50px 30px 50px;
+}
+
 .hidden {
   display: none;
 }

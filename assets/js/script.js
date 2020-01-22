@@ -1,9 +1,13 @@
 const gameCardsEl = document.getElementById("game-cards");
 gameCardsEl.addEventListener("click", handleClick);
+const gameCardsArray = document.querySelectorAll(".card-sleeve");
+const winModalEl = document.getElementById("win-modal");
 let firstCardClicked;
 let secondCardClicked;
 let firstCardClasses;
 let secondCardClasses;
+let maxMatches = gameCardsArray.length / 2;
+let matchCount = 0;
 
 function handleClick(event) {
   if (event.target.className.indexOf("card-back") === -1) {
@@ -20,19 +24,28 @@ function handleClick(event) {
     secondCardClasses = secondCardClicked.previousElementSibling.className;
     if(firstCardClasses === secondCardClasses) {
       console.log("The images match");
-      resetCards();
+      matchCount++;
+      checkWinCondition();
+      resetCardsClicked();
       gameCardsEl.addEventListener("click", handleClick);
     }else {
       setTimeout(function () {
                   firstCardClicked.classList.remove("hidden");
                   secondCardClicked.classList.remove("hidden");
-                  resetCards();
-                  gameCardsEl.addEventListener("click", handleClick);} ,2000);
+                  resetCardsClicked();
+                  gameCardsEl.addEventListener("click", handleClick);} ,1000);
     }
   }
 }
 
-function resetCards() {
+function resetCardsClicked() {
   firstCardClicked = null;
   secondCardClicked = null;
+}
+
+function checkWinCondition() {
+  if(matchCount === maxMatches) {
+    winModalEl.classList.remove("hidden");
+  }
+
 }
