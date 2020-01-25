@@ -8,15 +8,15 @@ let firstCardClasses;
 let secondCardClasses;
 let maxMatches = gameCardsArray.length / 2;
 let allCardsList = [
-  "css-logo",
-  "docker-logo",
-  "github-logo",
-  "html-logo",
-  "js-logo",
-  "mysql-logo",
-  "node-logo",
-  "php-logo",
-  "react-logo"
+  "bronto",
+  "cute-blue-dino",
+  "cute-green-dino",
+  "cute-para",
+  "good-dino",
+  "marine-dino",
+  "mario-dino",
+  "raptor",
+  "t-rex"
 ]
 allCardsList = allCardsList.concat(allCardsList); //adding the second of each card to the cards list
 console.log(allCardsList);

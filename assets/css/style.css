@@ -1,4 +1,8 @@
+/* font-family: 'Faster One', cursive;
+font-family: 'Bungee Shade', cursive;
+font-family: 'Bangers', cursive; */
 body {
+  margin: 0;
   height: 97vh;
 }
 
@@ -7,13 +11,15 @@ body {
   height: 100%;
   max-width: 1500px;
   margin: auto;
-  background-image: url('../images/lfz-background.jpg');
+  background-image: url('../dino-images/jurassic-backdrop.jpg');
   background-size: cover;
 }
 
 #header {
+  font-family: 'Bungee Shade', cursive;
+  font-style: italic;
   width: 100%;
-  color: blue;
+  color: red;
   text-align: center;
 }
 
@@ -31,17 +37,14 @@ body {
 }
 
 #aside > * {
+  display: flex;
   height: 11%;
   margin: 5px;
   background-color: skyblue;
-  text-align: center;
-  justify-items: center;
-  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
 }
-#aside > * > p {
-  margin: 0;
-  padding: 12px 0;
-}
+
 #aside > *:first-child > p {
   font-weight: bold;
   font-size: 18px;
@@ -58,7 +61,7 @@ body {
 
 .card-sleeve {
   position: relative;
-  height: 24%;
+  height: 30%;
 }
 
 .card-back, .card-front {
@@ -70,11 +73,14 @@ body {
 }
 
 .card-back {
-  background-image: url('../images/lfz-card.jpg');
+  background-image: url('../dino-images/jurassic-cardback.png');
+  background-size: cover;
+  background-color: transparent;
   position: absolute;
 }
 .card-front {
   position: absolute;
+  background-size: contain;
 }
 
 #win-modal {
