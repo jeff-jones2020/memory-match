@@ -1,28 +1,27 @@
 .bronto {
   background-image: url('../dino-images/bronto.png');
 }
-.cute-blue-dino {
-  background-image: url('../dino-images/cute-blue-dino.png');
+.ankyl {
+  background-image: url('../dino-images/ankyl.png');
 }
-.cute-green-dino {
-  background-image: url('../dino-images/cute-green-dino.png');
+.dactyl {
+  background-image: url('../dino-images/dactyl.png');
 }
-.cute-para {
-  background-image: url('../dino-images/cute-para.jpg');
-}
-.good-dino {
-  background-image: url('../dino-images/good-dino.jpg');
-}
-.mario-dino {
-  background-image: url('../dino-images/mario-dino.jpg');
+.para {
+  background-image: url('../dino-images/para.png');
 }
 .raptor {
   background-image: url('../dino-images/raptor.png');
 }
+.stego {
+  background-image: url('../dino-images/stego.png');
+}
 .t-rex {
   background-image: url('../dino-images/t-rex.png');
 }
-.marine-dino {
-  background-image: url('../dino-images/marine-dino.png');
-  background-color: white;
+.toy {
+  background-image: url('../dino-images/toy.png');
+}
+.trike {
+  background-image: url('../dino-images/trike.png');
 }

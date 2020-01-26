@@ -9,14 +9,14 @@ let secondCardClasses;
 let maxMatches = gameCardsArray.length / 2;
 let allCardsList = [
   "bronto",
-  "cute-blue-dino",
-  "cute-green-dino",
-  "cute-para",
-  "good-dino",
-  "marine-dino",
-  "mario-dino",
+  "ankyl",
+  "dactyl",
+  "para",
   "raptor",
-  "t-rex"
+  "stego",
+  "t-rex",
+  "toy",
+  "trike"
 ]
 allCardsList = allCardsList.concat(allCardsList); //adding the second of each card to the cards list
 console.log(allCardsList);
@@ -40,25 +40,28 @@ function handleClick(event) {
   }
   if(!firstCardClicked){
     firstCardClicked = event.target;
-    firstCardClicked.classList.add("hidden");
-    firstCardClasses = firstCardClicked.previousElementSibling.className;
+    //firstCardClicked.classList.add("hidden");
+    flipCard(firstCardClicked);
+    firstCardClasses = firstCardClicked.previousElementSibling.className; //classes of front of card
   }else {
     secondCardClicked = event.target;
     gameCardsEl.removeEventListener("click", handleClick);
-    secondCardClicked.classList.add("hidden");
+    //secondCardClicked.classList.add("hidden");
+    flipCard(secondCardClicked);
     secondCardClasses = secondCardClicked.previousElementSibling.className;
-    if(firstCardClasses === secondCardClasses) {
+    if(firstCardClasses === secondCardClasses) { //successful match
       console.log("The images match");
       matchCount++;
       resetCardsClicked();
       gameCardsEl.addEventListener("click", handleClick);
       checkWinCondition();
       updateStatistics();
-    }else {
+    }else { //failed match
       updateStatistics();
       setTimeout(function () {
-                  firstCardClicked.classList.remove("hidden");
-                  secondCardClicked.classList.remove("hidden");
+                  flipCard(firstCardClicked, secondCardClicked);
+                  /* firstCardClicked.classList.remove("hidden");
+                  secondCardClicked.classList.remove("hidden"); */
                   resetCardsClicked();
                   gameCardsEl.addEventListener("click", handleClick);} ,1000);
     }
@@ -77,6 +80,15 @@ function checkWinCondition() {
     return true;
   }
   return false;
+}
+
+function flipCard(cardOne, cardTwo) {
+  cardOne.classList.toggle("hidden");
+  cardOne.previousElementSibling.classList.toggle("hidden");
+  if(cardTwo){
+    cardTwo.classList.toggle("hidden");
+    cardTwo.previousElementSibling.classList.toggle("hidden");
+  }
 }
 
 function updateStatistics(newGame) {
@@ -109,7 +121,7 @@ function shuffleCards() {
   for (var i = 0; i < gameCardsArray.length; i++) {
     randomIndex = Math.floor(Math.random() * cloneCardsArray.length);
     classNameToChange = gameCardsArray[i].firstElementChild.className;
-    classNameToChange = classNameToChange.split(" ")[0] +" "+ cloneCardsArray.splice(randomIndex, 1)[0];
+    classNameToChange = classNameToChange.split(" ")[0] +" "+ cloneCardsArray.splice(randomIndex, 1)[0] + " hidden";
     //sets className equal to the first substring of its current value "card-front", and adds the new class from cloneCardsArray
     gameCardsArray[i].firstElementChild.className = classNameToChange;
   }
