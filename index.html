@@ -7,14 +7,16 @@
   <title>Memory Match</title>
   <link rel="stylesheet" href="assets/css/grid.css">
   <link rel="stylesheet" href="assets/css/logos.css">
+  <link rel="stylesheet" href="assets/css/dinos.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Bangers|Bungee+Shade|Faster+One&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
     <div class="row">
-      <header id="header"><h1>LFZ Memory Match</h1></header>
+      <header id="header"><h1>ESCAPE FROM JURASSIC WORLD</h1></header>
     </div>
-    <div class="row col-6">
+    <div id="game-area" class="row col-12">
       <aside id="aside" class="col-2">
         <div id="stats" class="col-12"><p>Stats</p></div>
         <div id="games-played" class="col-12"><p>Games Played</p></div>
@@ -26,75 +28,85 @@
       </aside>
       <main id="game-cards" class="col-10">
         <div class="card-sleeve col-2">
-          <div class="card-front"></div>
+          <div class="card-front hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="card-sleeve col-2">
-          <div class="card-front"></div>
+          <div class="card-front hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="card-sleeve col-2">
-          <div class="card-front"></div>
+          <div class="card-front hidden"></div>
+          <div class="card-back"></div>
+        </div>
+
+        <div class="portrait-break"></div>
+        <div class="card-sleeve col-2">
+          <div class="card-front hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="card-sleeve col-2">
-          <div class="card-front"></div>
+          <div class="card-front hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="card-sleeve col-2">
-          <div class="card-front"></div>
+          <div class="card-front hidden"></div>
+          <div class="card-back"></div>
+        </div>
+
+        <div class="portrait-break"></div>
+        <div class="card-sleeve col-2">
+          <div class="card-front hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="card-sleeve col-2">
-          <div class="card-front"></div>
+          <div class="card-front hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="card-sleeve col-2">
-          <div class="card-front"></div>
+          <div class="card-front hidden"></div>
+          <div class="card-back"></div>
+        </div>
+
+        <div class="portrait-break"></div>
+        <div class="card-sleeve col-2">
+          <div class="card-front hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="card-sleeve col-2">
-          <div class="card-front"></div>
+          <div class="card-front hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="card-sleeve col-2">
-          <div class="card-front"></div>
+          <div class="card-front hidden"></div>
+          <div class="card-back"></div>
+        </div>
+
+        <div class="portrait-break"></div>
+        <div class="card-sleeve col-2">
+          <div class="card-front hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="card-sleeve col-2">
-          <div class="card-front"></div>
+          <div class="card-front hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="card-sleeve col-2">
-          <div class="card-front"></div>
+          <div class="card-front hidden"></div>
+          <div class="card-back"></div>
+        </div>
+
+        <div class="portrait-break"></div>
+        <div class="card-sleeve col-2">
+          <div class="card-front hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="card-sleeve col-2">
-          <div class="card-front"></div>
+          <div class="card-front hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="card-sleeve col-2">
-          <div class="card-front"></div>
-          <div class="card-back"></div>
-        </div>
-        <div class="card-sleeve col-2">
-          <div class="card-front"></div>
-          <div class="card-back"></div>
-        </div>
-        <div class="card-sleeve col-2">
-          <div class="card-front"></div>
-          <div class="card-back"></div>
-        </div>
-        <div class="card-sleeve col-2">
-          <div class="card-front"></div>
-          <div class="card-back"></div>
-        </div>
-        <div class="card-sleeve col-2">
-          <div class="card-front"></div>
-          <div class="card-back"></div>
-        </div>
-        <div class="card-sleeve col-2">
-          <div class="card-front"></div>
+          <div class="card-front hidden"></div>
           <div class="card-back"></div>
         </div>
       </main>
@@ -102,7 +114,7 @@
   </div>
 
   <div id="win-modal" class="hidden">
-    <h1>Congratulations<br>You have Won!!1!</h1>
+    <h1>Congrats!<br>You escaped!</h1>
     <button id="reset-game-btn" type="button">Reset Game</button>
   </div>
 
