@@ -57,6 +57,7 @@ body {
   font-size: 20px;
   border: 5px solid black;
   border-radius: 20px;
+  color: antiquewhite;
   background-color: rgb(0, 78, 0);
 }
 
@@ -86,6 +87,11 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.flip-animation {
+  transition-duration: 200ms;
+  transform: rotateY(90deg);
 }
 
 .card-back {
@@ -131,6 +137,10 @@ body {
 }
 
 @media only screen and (max-width: 900px) {
+
+}
+
+@media only screen and (max-width: 700px) {
   .card-sleeve {
     height: 15%;
     width: 30%;
@@ -138,9 +148,6 @@ body {
   .portrait-break {
     width: 100%;
   }
-}
-
-@media only screen and (max-width: 700px) {
   #aside > * {
     font-size: 12px;
   }

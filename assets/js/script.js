@@ -83,12 +83,19 @@ function checkWinCondition() {
 }
 
 function flipCard(cardOne, cardTwo) {
-  cardOne.classList.toggle("hidden");
-  cardOne.previousElementSibling.classList.toggle("hidden");
-  if(cardTwo){
-    cardTwo.classList.toggle("hidden");
-    cardTwo.previousElementSibling.classList.toggle("hidden");
-  }
+  cardOne.classList.add("flip-animation");
+
+  setTimeout(function () {
+    cardOne.classList.remove("flip-animation"); // reset transform
+
+    /* cardOne.style.transform = "rotateY(90)"; */
+    cardOne.classList.toggle("hidden");
+    cardOne.previousElementSibling.classList.toggle("hidden");
+    if(cardTwo){
+      cardTwo.classList.toggle("hidden");
+      cardTwo.previousElementSibling.classList.toggle("hidden");
+    }
+    }, 200);
 }
 
 function updateStatistics(newGame) {
