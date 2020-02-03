@@ -76,6 +76,7 @@ function resetCardsClicked() {
 function checkWinCondition() {
   if(matchCount === maxMatches) {
     winModalEl.classList.remove("hidden");
+    gameCardsArray.forEach(element => element.classList.add('spinning-animation'));
     gameCount++;
     return true;
   }
@@ -113,9 +114,10 @@ function updateStatistics(newGame) {
 }
 
 function resetGame(event) {
-  for(var i=0; i<gameCardsArray.length; i++){
-    gameCardsArray[i].lastElementChild.classList.remove("hidden");
-  }
+  gameCardsArray.forEach(element => {
+                          element.classList.remove('spinning-animation');
+                          element.lastElementChild.classList.remove('hidden');
+                        });
   updateStatistics(true);
   shuffleCards();
   winModalEl.classList.add("hidden");

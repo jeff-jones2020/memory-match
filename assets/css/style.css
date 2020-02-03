@@ -93,6 +93,12 @@ body {
   transition-duration: 200ms;
   transform: rotateY(90deg);
 }
+.spinning-animation {
+  animation-name: spin-cards;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
 
 .card-back {
   background-image: url('../dino-images/jurassic-cardback.png');
@@ -127,6 +133,11 @@ body {
 
 .hidden {
   display: none;
+}
+
+@keyframes spin-cards {
+  from  {transform: rotateY(0deg);}
+  to {transform: rotateY(360deg);}
 }
 
 @media only screen and (max-width: 1100px) {
