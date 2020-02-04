@@ -9,6 +9,7 @@ body {
   background-image: linear-gradient(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)),
                   url("../dino-images/jurassic-backdrop.jpg");
   background-size: cover;
+  background-position: center;
 }
 
 .container {
@@ -17,6 +18,12 @@ body {
   height: 100%;
   max-width: 1500px;
   margin: auto;
+}
+
+.row:first-child {
+  display: flex;
+  height: 15%;
+  align-items: center;
 }
 
 #header {
@@ -36,9 +43,9 @@ body {
 #game-area {
   position: absolute;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  height: 70%;
+  top: 85%;
+  transform: translate(-50%, -85%);
+  height: 85%;
 }
 
 #aside {
