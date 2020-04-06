@@ -19,7 +19,6 @@ let allCardsList = [
   "trike"
 ]
 allCardsList = allCardsList.concat(allCardsList);
-console.log(allCardsList);
 shuffleCards();
 
 let gameCount = 0;
@@ -47,7 +46,6 @@ function handleClick(event) {
     flipCard(secondCardClicked);
     secondCardClasses = secondCardClicked.previousElementSibling.className;
     if(firstCardClasses === secondCardClasses) {
-      console.log("The images match");
       matchCount++;
       resetCardsClicked();
       gameCardsEl.addEventListener("click", handleClick);
