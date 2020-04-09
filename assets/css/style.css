@@ -87,6 +87,8 @@ body {
 }
 
 .card-sleeve {
+  display: flex;
+  justify-content: center;
   position: relative;
   height: 30%;
 }
@@ -114,6 +116,10 @@ body {
   background-image: url('../dino-images/jurassic-cardback.png');
   position: absolute;
 }
+.card-back:hover {
+  width: 115%;
+  cursor: pointer;
+}
 .card-front {
   position: absolute;
 }
@@ -139,6 +145,10 @@ body {
     padding: 10px;
     font-family: 'Bangers', cursive;
     font-size: 25px;
+}
+#reset-game-btn:hover {
+  box-shadow: 0 0 8px red;
+  cursor: pointer;
 }
 
 .hidden {
