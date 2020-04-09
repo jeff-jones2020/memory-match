@@ -34,7 +34,3 @@ Try the application live at [https://memory-match.jeff-j.me](https://memory-matc
 
 
 2. You can view the project by opening index.html in your browser.
-
-    ```shell
-    npm run dev
-    ```
