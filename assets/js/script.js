@@ -18,11 +18,9 @@ let allCardsList = [
   "toy",
   "trike"
 ]
-allCardsList = allCardsList.concat(allCardsList); //adding the second of each card to the cards list
-console.log(allCardsList);
-shuffleCards(); //randomly generated first round
+allCardsList = allCardsList.concat(allCardsList);
+shuffleCards();
 
-//Game Stats
 let gameCount = 0;
 const gameCountEl = document.getElementById("games-played-ct");
 let matchCount = 0;
@@ -40,28 +38,23 @@ function handleClick(event) {
   }
   if(!firstCardClicked){
     firstCardClicked = event.target;
-    //firstCardClicked.classList.add("hidden");
     flipCard(firstCardClicked);
-    firstCardClasses = firstCardClicked.previousElementSibling.className; //classes of front of card
+    firstCardClasses = firstCardClicked.previousElementSibling.className;
   }else {
     secondCardClicked = event.target;
     gameCardsEl.removeEventListener("click", handleClick);
-    //secondCardClicked.classList.add("hidden");
     flipCard(secondCardClicked);
     secondCardClasses = secondCardClicked.previousElementSibling.className;
-    if(firstCardClasses === secondCardClasses) { //successful match
-      console.log("The images match");
+    if(firstCardClasses === secondCardClasses) {
       matchCount++;
       resetCardsClicked();
       gameCardsEl.addEventListener("click", handleClick);
       checkWinCondition();
       updateStatistics();
-    }else { //failed match
+    }else {
       updateStatistics();
       setTimeout(function () {
                   flipCard(firstCardClicked, secondCardClicked);
-                  /* firstCardClicked.classList.remove("hidden");
-                  secondCardClicked.classList.remove("hidden"); */
                   resetCardsClicked();
                   gameCardsEl.addEventListener("click", handleClick);} ,1000);
     }
@@ -87,9 +80,7 @@ function flipCard(cardOne, cardTwo) {
   cardOne.classList.add("flip-animation");
 
   setTimeout(function () {
-    cardOne.classList.remove("flip-animation"); // reset transform
-
-    /* cardOne.style.transform = "rotateY(90)"; */
+    cardOne.classList.remove("flip-animation");
     cardOne.classList.toggle("hidden");
     cardOne.previousElementSibling.classList.toggle("hidden");
     if(cardTwo){
@@ -113,7 +104,7 @@ function updateStatistics(newGame) {
   accuracyPercentEl.innerText = accuracy + "%";
 }
 
-function resetGame(event) {
+function resetGame() {
   gameCardsArray.forEach(element => {
                           element.classList.remove('spinning-animation');
                           element.lastElementChild.classList.remove('hidden');
@@ -124,14 +115,13 @@ function resetGame(event) {
 }
 
 function shuffleCards() {
-  let cloneCardsArray = Array.from(allCardsList); //a temp array from which to remove items and distribute them randomly
+  let cloneCardsArray = Array.from(allCardsList);
   let randomIndex;
   let classNameToChange;
   for (var i = 0; i < gameCardsArray.length; i++) {
     randomIndex = Math.floor(Math.random() * cloneCardsArray.length);
     classNameToChange = gameCardsArray[i].firstElementChild.className;
     classNameToChange = classNameToChange.split(" ")[0] +" "+ cloneCardsArray.splice(randomIndex, 1)[0] + " hidden";
-    //sets className equal to the first substring of its current value "card-front", and adds the new class from cloneCardsArray
     gameCardsArray[i].firstElementChild.className = classNameToChange;
   }
 }
