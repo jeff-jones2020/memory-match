@@ -1,6 +1,3 @@
-/* font-family: 'Faster One', cursive;
-font-family: 'Bungee Shade', cursive;
-font-family: 'Bangers', cursive; */
 body {
   display: flex;
   align-items: center;
@@ -136,6 +133,10 @@ body {
 }
 #win-modal > h1{
   padding: 30px 50px 10px 50px;
+  font-family: 'Bangers', cursive;
+  color: antiquewhite;
+  letter-spacing: 0.05em;
+  font-weight: lighter;
 }
 #reset-game-btn {
   margin-bottom: 19px;
