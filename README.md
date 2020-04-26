@@ -1,5 +1,5 @@
 # memory-match
-A dynamic, responsive web application for bored people who want to play Jurassic-park themed memory match.
+A dynamic, responsive web application for people who want to play Jurassic-park themed memory match.
 
 ## Live Website
 Try the application live at [https://memory-match.jeff-j.me](https://memory-match.jeff-j.me)
